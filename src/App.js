@@ -8,6 +8,7 @@ import Default from './components/Default/Default';
 import Header from './components/Header/Header';
 import FriendDetail from './components/Friend-Detail/Friend-Detail';
 import Posts from './components/Posts/posts';
+import PostDetail from './components/post-detail/Post-Detail';
 
 function App() {
   
@@ -18,7 +19,9 @@ function App() {
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="Friends" element={<Friends></Friends>}></Route>
         <Route path="/Friend/:FriendId" element={<FriendDetail></FriendDetail>}></Route> {/* Vekhappa */}
-        <Route path="/Posts" element={<Posts></Posts>}></Route>
+        <Route path="/Posts" element={<Posts></Posts>}>
+          <Route path=":postId" element={<PostDetail></PostDetail>}></Route>
+        </Route>
         <Route path="About" element={<About></About>}></Route>
         <Route path="*" element={<Default></Default>}></Route>
       </Routes>
